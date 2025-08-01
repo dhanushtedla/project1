@@ -1,86 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dhanush University - Coming Soon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dhanush University</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
-
     body {
-      height: 100vh;
-      background: linear-gradient(270deg, #2e86de, #48dbfb, #1dd1a1);
-      background-size: 600% 600%;
-      animation: gradientBG 10s ease infinite;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc') no-repeat center center/cover;
       color: white;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    nav {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .images {
       display: flex;
       justify-content: center;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .images img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .contact {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px 20px;
+    }
+    .contact h2 {
+      font-size: 2rem;
+    }
+    .contact p {
+      font-size: 1.2rem;
+    }
+    footer {
       text-align: center;
-      flex-direction: column;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-      animation: fadeIn 2.5s ease-in-out;
-    }
-
-    #countdown {
-      font-size: 2em;
-      font-weight: bold;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <h1>Dhanush University</h1>
-  <p>We're launching soon! Stay tuned.</p>
-  <div id="countdown">Loading countdown...</div>
 
-  <script>
-    const launchDate = new Date("2025-10-01T00:00:00").getTime(); // Customize your launch date
-    const countdownEl = document.getElementById("countdown");
+  <header>
+    <h1>Dhanush University</h1>
+  </header>
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
+  <nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-      if (distance < 0) {
-        countdownEl.innerHTML = "We are live!";
-        return;
-      }
+  <section class="section" id="about">
+    <h2>Welcome to Dhanush University</h2>
+    <p>Empowering future leaders through knowledge, innovation, and excellence. Explore our diverse programs and vibrant campus life.</p>
+  </section>
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <section class="section" id="gallery">
+    <h2>Campus Gallery</h2>
+    <div class="images">
+      <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe" alt="Campus 1" />
+      <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="Campus 2" />
+      <img src="https://images.unsplash.com/photo-1581090700227-1b5c8186b1f9" alt="Library" />
+    </div>
+  </section>
 
-      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> +91 79956 22016</p>
+    <p><strong>Email:</strong> dhanushtedla94@gmail.com</p>
+    <p><strong>Location:</strong> Narasaraopet, Andhra Pradesh</p>
+  </section>
 
-    setInterval(updateCountdown, 1000);
-  </script>
+  <footer>
+    &copy; 2025 Dhanush University. All rights reserved.
+  </footer>
+
 </body>
 </html>
